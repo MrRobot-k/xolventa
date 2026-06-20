@@ -1,105 +1,81 @@
 ---
+const pasos = [
+  {
+    n: "1",
+    titulo: "Agendamos una plática",
+    texto: "Sin costo, sin compromiso. Me cuentas cómo funciona tu negocio y qué te gustaría mejorar o qué tareas odias hacer.",
+  },
+  {
+    n: "2",
+    titulo: "Propongo una solución concreta",
+    texto: "Te explico qué puedo hacer, cuánto tiempo tomaría y qué costo tiene. Sin tecnicismos raros ni promesas falsas.",
+  },
+  {
+    n: "3",
+    titulo: "Construyo y entrego",
+    texto: "Desarrollo tu sistema, web o automatización. Te explico cómo usarlo y queda funcionando.",
+  },
+  {
+    n: "4",
+    titulo: "Precios claros desde el inicio",
+    texto: "Cosas sencillas como una página web informativa se pagan una sola vez. Sistemas complejos o automatizaciones se manejan con pago mensual y soporte incluido.",
+  },
+];
+
+const puntos = [
+  "Desarrollado en Cd. Victoria para negocios de la región",
+  "Cada negocio es único, lo que construyo se adapta a ti",
+  "Pago único o mensual según el tipo de proyecto",
+  "Aunque no compres, te ayudo a elegir lo mejor",
+];
+---
 <section id="about" class="py-20 md:py-28 px-6 bg-card border-t border-border">
   <div class="max-w-5xl mx-auto">
     <div class="grid lg:grid-cols-2 gap-12 md:gap-20 items-start">
       <div>
         <p class="badge text-accent mb-4">C&oacute;mo trabajo</p>
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-balance mb-6">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
           Conozco tu negocio, luego te propongo algo &uacute;til
         </h2>
-        <p class="text-muted-foreground leading-relaxed mb-8 text-sm md:text-base">
+        <p class="text-muted-foreground leading-relaxed mb-10 text-sm md:text-base max-w-md">
           Vivo en Cd. Victoria y conozco el d&iacute;a a d&iacute;a de los negocios locales.
           No te voy a vender tecnolog&iacute;a que no necesitas. Primero nos tomamos un caf&eacute;
           o una videollamada, identificamos d&oacute;nde pierdes tiempo y dinero, y de ah&iacute;
           partimos para construir la soluci&oacute;n justa para ti.
         </p>
 
-        <div class="space-y-5">
-          <div class="flex gap-4 group">
-            <div class="flex flex-col items-center">
-              <span class="w-7 h-7 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xs font-semibold flex-shrink-0">1</span>
-              <div class="w-px flex-1 bg-border mt-2 group-last:hidden"></div>
+        <div>
+          {pasos.map((p, i) => (
+            <div class="flex gap-4 group">
+              <div class="flex flex-col items-center">
+                <span class="w-7 h-7 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xs font-mono-label flex-shrink-0">{p.n}</span>
+                {i < pasos.length - 1 && <div class="w-px flex-1 bg-border mt-2"></div>}
+              </div>
+              <div class="pb-7">
+                <h4 class="font-medium text-sm text-foreground mb-1">{p.titulo}</h4>
+                <p class="text-muted-foreground text-sm leading-relaxed">{p.texto}</p>
+              </div>
             </div>
-            <div class="pb-5 group-last:pb-0">
-              <h4 class="font-medium text-sm text-foreground mb-0.5">Agendamos una pl&aacute;tica</h4>
-              <p class="text-muted-foreground text-sm leading-relaxed">Sin costo, sin compromiso. Me cuentas c&oacute;mo funciona tu negocio y qu&eacute; te gustar&iacute;a mejorar o qu&eacute; tareas odias hacer.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 group">
-            <div class="flex flex-col items-center">
-              <span class="w-7 h-7 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xs font-semibold flex-shrink-0">2</span>
-              <div class="w-px flex-1 bg-border mt-2 group-last:hidden"></div>
-            </div>
-            <div class="pb-5 group-last:pb-0">
-              <h4 class="font-medium text-sm text-foreground mb-0.5">Propongo una soluci&oacute;n concreta</h4>
-              <p class="text-muted-foreground text-sm leading-relaxed">Te explico qu&eacute; puedo hacer, cu&aacute;nto tiempo tomar&iacute;a y qu&eacute; costo tiene. Sin tecnicismos raros ni promesas falsas.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 group">
-            <div class="flex flex-col items-center">
-              <span class="w-7 h-7 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xs font-semibold flex-shrink-0">3</span>
-              <div class="w-px flex-1 bg-border mt-2 group-last:hidden"></div>
-            </div>
-            <div class="pb-5 group-last:pb-0">
-              <h4 class="font-medium text-sm text-foreground mb-0.5">Construyo y entrego</h4>
-              <p class="text-muted-foreground text-sm leading-relaxed">Desarrollo tu sistema, web o automatizaci&oacute;n. Te explico c&oacute;mo usarlo y queda funcionando.</p>
-            </div>
-          </div>
-          <div class="flex gap-4 group">
-            <div class="flex flex-col items-center">
-              <span class="w-7 h-7 rounded-full bg-accent/10 flex items-center justify-center text-accent text-xs font-semibold flex-shrink-0">4</span>
-              <div class="w-px flex-1 bg-border mt-2 group-last:hidden"></div>
-            </div>
-            <div class="pb-5 group-last:pb-0">
-              <h4 class="font-medium text-sm text-foreground mb-0.5">Precios claros desde el inicio</h4>
-              <p class="text-muted-foreground text-sm leading-relaxed">Cosas sencillas como una pagina web informativa se pagan una sola vez. Sistemas complejos o automatizaciones se manejan con pago mensual y soporte incluido.</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
-      <div>
-        <div class="bg-background border border-border rounded-2xl p-7 md:p-8 relative">
-          <div class="absolute top-4 right-4 w-16 h-16 bg-accent/5 rounded-full blur-xl -z-10"></div>
-          
-          <div class="flex items-center gap-3 mb-6 pb-6 border-b border-border">
-            <div class="w-11 h-11 rounded-full bg-accent flex items-center justify-center text-white text-sm font-semibold">N</div>
-            <div>
-              <div class="text-sm font-medium text-foreground">Xolventa</div>
-              <div class="text-xs text-muted-foreground">Cd. Victoria, Tamaulipas</div>
+      <div class="lg:pt-1">
+        <p class="font-mono-label text-xs text-muted-foreground mb-5">Por qu&eacute; Xolventa</p>
+        <div class="space-y-0">
+          {puntos.map((punto, i) => (
+            <div class:list={["flex gap-4 py-5", i < puntos.length - 1 && "border-b border-border"]}>
+              <span class="font-mono-label text-accent text-sm flex-shrink-0 pt-0.5">0{i + 1}</span>
+              <p class="text-foreground/90 text-sm leading-relaxed">{punto}</p>
             </div>
-          </div>
+          ))}
+        </div>
 
-          <div class="space-y-5">
-            <div class="flex gap-3">
-              <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 9v4"/><path d="M10 11h4"/></svg>
-              <div>
-                <div class="text-sm font-medium text-foreground">Soluciones locales</div>
-                <div class="text-xs text-muted-foreground">Desarrollado en Cd. Victoria para negocios de la regi&oacute;n</div>
-              </div>
-            </div>
-            <div class="flex gap-3">
-              <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <div>
-                <div class="text-sm font-medium text-foreground">A tu medida</div>
-                <div class="text-xs text-muted-foreground">Cada negocio es &uacute;nico, como las calles de Cd. Victoria</div>
-              </div>
-            </div>
-            <div class="flex gap-3">
-              <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <div>
-                <div class="text-sm font-medium text-foreground">Precios justos</div>
-                <div class="text-xs text-muted-foreground">Pago &uacute;nico o mensual seg&uacute;n el proyecto</div>
-              </div>
-            </div>
-            <div class="flex gap-3">
-              <svg class="w-4 h-4 text-accent mt-0.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-              <div>
-                <div class="text-sm font-medium text-foreground">Asesor&iacute;a gratuita</div>
-                <div class="text-xs text-muted-foreground">Aunque no compres, te ayudo a elegir lo mejor</div>
-              </div>
-            </div>
-          </div>
+        <div class="mt-10 rounded-xl border border-accent/20 bg-accent/[0.04] p-6">
+          <p class="text-sm text-foreground/90 leading-relaxed">
+            <span class="text-accent font-medium">Ciudad Victoria, Tamaulipas.</span>
+            {" "}Si tu negocio está aquí, probablemente ya conozco a alguien que trabaja cerca de ti.
+          </p>
         </div>
       </div>
     </div>

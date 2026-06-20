@@ -1,63 +1,77 @@
----
-
----
-
-<section class="relative overflow-hidden bg-gradient-to-b from-primary to-[#0e1623] text-white">
+<section class="relative overflow-hidden bg-background text-foreground border-b border-border">
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-    <div class="absolute -top-40 -right-40 w-[600px] h-[600px] bg-accent/8 rounded-full blur-[120px]"></div>
-    <div class="absolute -bottom-40 -left-40 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px]"></div>
+    <div class="absolute top-0 right-0 w-px h-full bg-linear-to-b from-transparent via-border to-transparent hidden lg:block" style="left: 58%"></div>
+    <div class="absolute -top-32 right-0 w-105 h-105 bg-accent/60 rounded-full blur-[140px]"></div>
   </div>
 
-  <div class="relative max-w-5xl mx-auto px-6 py-20 md:py-32">
-    <div class="max-w-3xl">
-      <img src="/logo-xolventa.webp" alt="Xolventa" class="w-full max-w-lg mx-0 mb-10" />
+  <div class="relative max-w-6xl mx-auto px-6 py-16 md:py-24">
+    <div class="grid lg:grid-cols-[1fr_420px] gap-12 lg:gap-16 items-start">
+      <div class="lg:pt-4">
+        <img src="/logo-xolventa.png" alt="Xolventa" class="h-14 w-auto mb-10" />
 
-      <p class="badge text-accent mb-6">CD. VICTORIA, TAMAULIPAS</p>
+        <p class="badge text-accent mb-5">Cd. Victoria, Tamaulipas</p>
 
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.08] mb-6 text-balance text-white">
-        Soluciones técnicas personalizadas para negocios de Cd. Victoria
-      </h1>
+        <h1 class="text-4xl sm:text-5xl md:text-[3.4rem] font-bold tracking-[-0.04em] leading-[1.04] mb-6 text-foreground">
+          Tecnología a la medida de tu negocio, no al revés
+        </h1>
 
-      <p class="text-base md:text-lg text-white/55 max-w-2xl leading-relaxed mb-10">
-        Desde sistemas de venta hasta automatizaciones con IA, desarrollo todo a tu medida. Sin plantillas genéricas.
-      </p>
+        <p class="text-muted-foreground text-base md:text-lg max-w-md leading-relaxed mb-10">
+          Apps personalizadas, páginas web y automatizaciones construidas para cómo trabajas tú &mdash;no para una plantilla gen&eacute;rica. Sin tecnología que no necesitas.
+        </p>
 
-      <div class="flex flex-col sm:flex-row gap-3">
-        <a
-          href="#contacto"
-          class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-accent text-white font-medium rounded-lg hover:bg-[#165f77] transition-colors text-sm"
-        >
-          Cuéntame qué necesitas
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a
-          href="#servicios"
-          class="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-white/15 text-white/80 font-medium rounded-lg hover:bg-white/5 hover:text-white transition-colors text-sm"
-        >
-          Ver servicios
-        </a>
-      </div>
-
-      <div class="flex flex-wrap gap-x-8 gap-y-2 mt-14 text-sm text-white/35">
-        <span>Windows &middot; macOS &middot; Linux</span>
-        <span>Web &middot; Tablet &middot; Celular</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="bg-primary border-t border-white/5">
-  <div class="max-w-5xl mx-auto px-6 py-10">
-    <div class="flex flex-wrap justify-between items-center gap-4 text-sm">
-      <div class="flex items-center gap-3">
-        <div class="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
-          <span class="text-accent text-xs font-bold">N</span>
+        <div class="flex flex-wrap gap-3 mb-12">
+          <a href="#contacto" class="inline-flex items-center justify-center gap-2 rounded-lg bg-accent text-accent-foreground font-medium px-6 py-3 text-sm hover:brightness-110 transition-all duration-200 shadow-lg shadow-accent/20">
+            Cu&eacute;ntame tu proyecto
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#servicios" class="inline-flex items-center justify-center gap-2 rounded-lg border border-border text-foreground font-medium px-6 py-3 text-sm hover:bg-secondary transition-all duration-200">
+            Ver servicios
+          </a>
         </div>
-        <span class="text-white/55">Xolventa &mdash; Cd. Victoria</span>
+
+        <div class="flex items-center gap-6 text-xs text-muted-foreground font-mono-label">
+          <span class="flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+            Asesoría inicial sin costo
+          </span>
+          <span class="flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+            Pago único o mensual
+          </span>
+        </div>
       </div>
-      <a href="https://wa.me/528342550555" target="_blank" rel="noopener noreferrer" class="text-white/35 hover:text-white/75 transition-colors">
-        834 255 0555
-      </a>
+
+      <div class="lg:pt-4">
+        <div class="rounded-xl border border-border bg-card overflow-hidden shadow-2xl shadow-black/40">
+          <div class="flex items-center gap-1.5 px-4 py-3 border-b border-border bg-secondary/40">
+            <span class="w-2.5 h-2.5 rounded-full bg-border"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-border"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-border"></span>
+            <span class="ml-2 text-xs text-muted-foreground font-mono-label">nuevo-proyecto.md</span>
+          </div>
+          <div class="p-5 font-mono-label text-[13px] leading-relaxed">
+            <p class="text-muted-foreground mb-3"><span class="text-accent">#</span> Diagnóstico inicial</p>
+            <p class="text-foreground/90 mb-4">"Llevo todo a mano y se me olvidan<br/>cosas, quiero algo hecho para mí."</p>
+
+            <p class="text-muted-foreground mb-3"><span class="text-accent">#</span> Solución propuesta</p>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2">
+                <span class="text-accent">✓</span>
+                <span class="text-foreground/80">App a la medida de tu proceso</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-accent">✓</span>
+                <span class="text-foreground/80">Sin pasos ni pantallas de más</span>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-border flex items-center justify-between">
+              <span class="text-muted-foreground">tiempo estimado</span>
+              <span class="text-accent">1 mes</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

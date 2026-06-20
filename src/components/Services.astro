@@ -1,111 +1,74 @@
 ---
-<section id="servicios" class="py-20 md:py-28 px-6 bg-background">
+const servicios = [
+  {
+    numero: "01",
+    titulo: "Apps personalizadas para tu negocio",
+    texto: "¿Usas una app genérica que no termina de convencerte? Te construyo un sistema a tu medida: punto de venta, control de inventario, citas, clientes, o lo que tu negocio realmente necesite.",
+    tags: ["Pago mensual", "Soporte incluido", "PC, tablet y celular"],
+    destacado: true,
+  },
+  {
+    numero: "02",
+    titulo: "Páginas web para tu negocio",
+    texto: "Tu negocio merece estar en internet. Una página donde tus clientes encuentran tus servicios, horarios y ubicación, y pueden contactarte directo.",
+    tags: ["Pago único", "WhatsApp integrado"],
+  },
+  {
+    numero: "03",
+    titulo: "Automatizaciones con IA",
+    texto: "Esas tareas que haces todos los días y te quitan tiempo: responder mensajes, organizar datos, generar reportes. La IA puede hacerlas por ti.",
+    tags: ["Pago mensual", "Soporte continuo"],
+  },
+  {
+    numero: "04",
+    titulo: "Entrevista para tu negocio",
+    texto: "Agendamos una plática sin compromiso. Me cuentas cómo trabajas y qué te quita tiempo. De ahí vemos si puedo ayudarte.",
+    tags: ["Sin costo", "Presencial o remoto"],
+  },
+];
+---
+<section id="servicios" class="py-20 md:py-28 px-6 bg-background border-t border-border">
   <div class="max-w-5xl mx-auto">
-    <div class="mb-14">
+    <div class="mb-14 max-w-xl">
       <p class="badge text-accent mb-4">Servicios</p>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-balance mb-4">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">
         Soluciones para los desafíos más comunes de los negocios locales
       </h2>
-      <p class="text-muted-foreground max-w-lg text-sm md:text-base leading-relaxed">
-        Cada negocio enfrenta desafíos únicos. Aquí están las soluciones más comunes que ayudo a resolver.
+      <p class="text-muted-foreground text-sm md:text-base leading-relaxed">
+        Cada negocio enfrenta desaf&iacute;os &uacute;nicos. Aqu&iacute; est&aacute;n las soluciones m&aacute;s comunes que ayudo a resolver.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-4">
-      <div class="group bg-card border border-border rounded-xl p-6 md:p-7 hover:shadow-lg hover:shadow-black/[0.02] hover:-translate-y-0.5 transition-all duration-300">
-        <div class="flex items-start gap-4">
-          <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 9v4"/><path d="M10 11h4"/><path d="M6 16h12"/>
-            </svg>
+    <div class="border-t border-border">
+      {servicios.map((s) => (
+        <div
+          class:list={[
+            "group grid md:grid-cols-[80px_1fr] gap-4 md:gap-8 py-8 md:py-10 border-b border-border transition-colors",
+            s.destacado && "md:py-12"
+          ]}
+        >
+          <div class="flex md:block items-baseline gap-3">
+            <span class="font-mono-label text-2xl md:text-3xl text-muted-foreground/40 group-hover:text-accent/60 transition-colors">
+              {s.numero}
+            </span>
           </div>
-          <div>
-            <h3 class="font-semibold text-foreground mb-1.5">Sistemas de venta e inventario</h3>
-            <p class="text-muted-foreground text-sm leading-relaxed mb-3">
-              &iquest;Usas una app de pago que no termina de convencerte? Te construyo un sistema
-              a tu medida: punto de venta, control de inventario, corte de caja, clientes.
-              Es un desarrollo completo, por lo que se maneja con pago mensual e incluye soporte.
+          <div class="max-w-2xl">
+            <h3 class:list={["font-semibold text-foreground mb-2", s.destacado ? "text-xl md:text-2xl" : "text-lg"]}>
+              {s.titulo}
+            </h3>
+            <p class="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
+              {s.texto}
             </p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-xs text-muted-foreground bg-secondary px-2.5 py-1 rounded-md">Pago mensual</span>
-              <span class="text-xs text-muted-foreground bg-secondary px-2.5 py-1 rounded-md">Soporte incluido</span>
-              <span class="text-xs text-muted-foreground bg-secondary px-2.5 py-1 rounded-md">PC, tablet y celular</span>
-              <span class="text-xs text-muted-foreground bg-secondary px-2.5 py-1 rounded-md">Personalizado</span>
+            <div class="flex flex-wrap gap-2">
+              {s.tags.map((tag) => (
+                <span class="font-mono-label text-[0.6875rem] text-muted-foreground border border-border px-2.5 py-1 rounded-md">
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="group bg-card border border-border rounded-xl p-6 md:p-7 hover:shadow-lg hover:shadow-black/[0.02] hover:-translate-y-0.5 transition-all duration-300">
-        <div class="flex items-start gap-4">
-          <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-semibold text-foreground mb-1.5">P&aacute;ginas web para tu negocio</h3>
-            <p class="text-muted-foreground text-sm leading-relaxed mb-3">
-              Tu negocio merece estar en internet. Te creo una p&aacute;gina donde tus clientes
-              encuentran tus servicios, horarios, ubicaci&oacute;n y pueden contactarte directo.
-              Se ve bien en cualquier dispositivo. Pago &uacute;nico y es tuya.
-            </p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-xs text-muted-foreground bg-secondary px-2.5 py-1 rounded-md">Pago &uacute;nico</span>
-              <span class="text-xs text-muted-foreground bg-secondary px-2.5 py-1 rounded-md">Dise&ntilde;o profesional</span>
-              <span class="text-xs text-muted-foreground bg-secondary px-2.5 py-1 rounded-md">Adaptable a celulares</span>
-              <span class="text-xs text-muted-foreground bg-secondary px-2.5 py-1 rounded-md">WhatsApp integrado</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="group bg-card border border-border rounded-xl p-6 md:p-7 hover:shadow-lg hover:shadow-black/[0.02] hover:-translate-y-0.5 transition-all duration-300">
-        <div class="flex items-start gap-4">
-          <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0-4 4 4 4 0 0 0 4 4h1v3a4 4 0 0 0 8 0v-3h1a4 4 0 0 0 4-4 4 4 0 0 0-4-4V6a4 4 0 0 0-4-4z"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-semibold text-foreground mb-1.5">Automatizaciones con IA</h3>
-            <p class="text-muted-foreground text-sm leading-relaxed mb-3">
-              Esas tareas que haces todos los d&iacute;as y te aburren o te quitan tiempo:
-              responder mensajes, organizar datos, generar reportes, dar seguimiento a clientes.
-              La IA puede hacerlas por ti. Se maneja con pago mensual y soporte continuo.
-            </p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-xs text-muted-foreground bg-secondary px-2.5 py-1 rounded-md">Pago mensual</span>
-              <span class="text-xs text-muted-foreground bg-secondary px-2.5 py-1 rounded-md">Tareas repetitivas</span>
-              <span class="text-xs text-muted-foreground bg-secondary px-2.5 py-1 rounded-md">Respuestas autom&aacute;ticas</span>
-              <span class="text-xs text-muted-foreground bg-secondary px-2.5 py-1 rounded-md">Soporte incluido</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="group bg-card border border-border rounded-xl p-6 md:p-7 hover:shadow-lg hover:shadow-black/[0.02] hover:-translate-y-0.5 transition-all duration-300">
-        <div class="flex items-start gap-4">
-          <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <svg class="w-5 h-5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-semibold text-foreground mb-1.5">Entrevista para tu negocio</h3>
-            <p class="text-muted-foreground text-sm leading-relaxed mb-3">
-              Agendamos una pl&aacute;tica sin ning&uacute;n compromiso. Me cuentas c&oacute;mo trabajas,
-              qu&eacute; te quita tiempo, qu&eacute; tareas odias hacer, qu&eacute; problemas tienes con tu
-              sistema actual. De ah&iacute; vemos si puedo ayudarte.
-            </p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="text-xs text-muted-foreground bg-secondary px-2.5 py-1 rounded-md">Sin costo</span>
-              <span class="text-xs text-muted-foreground bg-secondary px-2.5 py-1 rounded-md">Sin compromiso</span>
-              <span class="text-xs text-muted-foreground bg-secondary px-2.5 py-1 rounded-md">Presencial o remoto</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </section>

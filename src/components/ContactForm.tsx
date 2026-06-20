@@ -9,6 +9,7 @@ const WHATSAPP_NUMBER = '528342550555';
 export default function ContactForm() {
   const [nombre, setNombre] = useState('');
   const [negocio, setNegocio] = useState('');
+  const [domicilio, setDomicilio] = useState('');
   const [problema, setProblema] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -22,6 +23,10 @@ export default function ContactForm() {
       mensaje += ` Tengo un negocio llamado "${negocio}".`;
     }
 
+    if (domicilio.trim()) {
+      mensaje += ` Está ubicado en: ${domicilio}.`;
+    }
+
     mensaje += `\n\nTe cuento mi situación:\n${problema}`;
 
     const mensajeCodificado = encodeURIComponent(mensaje);
@@ -32,6 +37,7 @@ export default function ContactForm() {
     setTimeout(() => {
       setNombre('');
       setNegocio('');
+      setDomicilio('');
       setProblema('');
       setIsSubmitting(false);
     }, 1000);
@@ -51,8 +57,14 @@ export default function ContactForm() {
           </p>
         </div>
 
-        <div className="bg-card border border-border rounded-xl p-6 md:p-10">
-          <form onSubmit={handleSubmit} className="space-y-5">
+        <div className="rounded-xl border border-border bg-card overflow-hidden shadow-sm">
+          <div className="flex items-center gap-1.5 px-5 py-3 border-b border-border bg-secondary/40">
+            <span className="w-2.5 h-2.5 rounded-full bg-border"></span>
+            <span className="w-2.5 h-2.5 rounded-full bg-border"></span>
+            <span className="w-2.5 h-2.5 rounded-full bg-border"></span>
+            <span className="ml-2 text-xs text-muted-foreground font-mono-label">nuevo-proyecto.md</span>
+          </div>
+          <form onSubmit={handleSubmit} className="space-y-5 p-6 md:p-8">
             <div className="space-y-1.5">
               <Label htmlFor="nombre" className="text-foreground text-sm font-medium">
                 Tu nombre <span className="text-accent">*</span>
@@ -64,7 +76,6 @@ export default function ContactForm() {
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
                 required
-                className="bg-white border-border"
               />
             </div>
 
@@ -78,7 +89,19 @@ export default function ContactForm() {
                 placeholder="Ej: Taquería El Compa, Ferretería Martínez..."
                 value={negocio}
                 onChange={(e) => setNegocio(e.target.value)}
-                className="bg-white border-border"
+              />
+            </div>
+
+            <div className="space-y-1.5">
+              <Label htmlFor="domicilio" className="text-foreground text-sm font-medium">
+                Domicilio de tu negocio <span className="text-muted-foreground text-xs font-normal">(opcional)</span>
+              </Label>
+              <Input
+                id="domicilio"
+                type="text"
+                placeholder="Ej: Calle Hidalgo 123, Centro, Cd. Victoria"
+                value={domicilio}
+                onChange={(e) => setDomicilio(e.target.value)}
               />
             </div>
 
@@ -93,14 +116,13 @@ export default function ContactForm() {
                 onChange={(e) => setProblema(e.target.value)}
                 required
                 rows={5}
-                className="bg-white border-border resize-none"
               />
             </div>
 
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-accent hover:bg-[#165f77] text-white font-medium py-6 text-sm transition-colors"
+              className="w-full bg-accent text-accent-foreground hover:brightness-110 font-medium py-6 text-sm transition-all duration-200 shadow-lg shadow-accent/20"
             >
               {isSubmitting ? (
                 <span className="flex items-center justify-center gap-2">
