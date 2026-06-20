@@ -1,0 +1,76 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Nexova | Software, Webs y Automatización con IA — Cd. Victoria',
+  description = 'Ayudo a negocios locales de Cd. Victoria a automatizar procesos, crear sistemas de venta e inventario, y dar a conocer sus servicios con páginas web profesionales. Pago único o mensual según el proyecto.'
+} = Astro.props;
+
+const domain = 'https://nexova.vercel.app';
+const ogImage = `${domain}/og-image.webp`;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="light" />
+    <meta name="keywords" content="software Cd. Victoria, sistemas de venta, inventario, páginas web, automatización IA, desarrollo web Tamaulipas, punto de venta, negocio local" />
+    <link rel="canonical" href={domain} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={domain} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="es_MX" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Nexova",
+      "description": description,
+      "url": domain,
+      "image": ogImage,
+      "telephone": "+528342550555",
+      "email": "",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad Victoria",
+        "addressRegion": "Tamaulipas",
+        "addressCountry": "MX"
+      },
+      "areaServed": "Ciudad Victoria, Tamaulipas",
+      "priceRange": "$$",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+528342550555",
+        "contactType": "sales",
+        "availableLanguage": ["Spanish"]
+      },
+      "sameAs": ["https://wa.me/528342550555"]
+    })} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-background text-foreground antialiased">
+    <slot />
+  </body>
+</html>

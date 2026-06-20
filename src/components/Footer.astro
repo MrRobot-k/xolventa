@@ -1,0 +1,30 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="py-12 px-6 border-t border-border bg-card">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left">
+        <div class="text-sm font-semibold text-foreground mb-0.5">Nexova &mdash; Cd. Victoria</div>
+        <p class="text-muted-foreground text-xs">Soluciones, webs y automatizaci&oacute;n para negocios locales</p>
+      </div>
+
+      <nav class="flex items-center gap-6 text-xs text-muted-foreground">
+        <a href="#servicios" class="hover:text-foreground transition-colors">Servicios</a>
+        <a href="#about" class="hover:text-foreground transition-colors">C&oacute;mo trabajo</a>
+        <a href="#contacto" class="hover:text-foreground transition-colors">Contacto</a>
+      </nav>
+
+      <a href="https://wa.me/528342550555" target="_blank" rel="noopener noreferrer" class="text-xs text-muted-foreground hover:text-foreground transition-colors">
+        834 255 0555
+      </a>
+    </div>
+
+    <div class="border-t border-border mt-8 pt-8 text-center">
+      <p class="text-muted-foreground text-xs">
+        &copy; {currentYear} &mdash; Cd. Victoria, Tamaulipas
+      </p>
+    </div>
+  </div>
+</footer>
